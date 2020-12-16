@@ -28,7 +28,7 @@ def ingresoAudio():
         audio = recognizer.listen(source)
         palabra=recognizer.recognize_google(audio, language="es_ES")    
     return palabra
-
+    
 while palabra!= "terminar":
     palabra=ingresoAudio()
     print(palabra)
