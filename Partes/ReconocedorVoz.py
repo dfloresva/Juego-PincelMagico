@@ -1,14 +1,12 @@
 import pyttsx3
 import speech_recognition as sr
-#from difflib import SequenceMatcher as SM
-#import random
-#import time
-
+############
+#import Partes.CapturaPantalla
+############
 recognizer=sr.Recognizer()
 microphone=sr.Microphone(device_index = 0)
 
 eng= pyttsx3.init()
-
 #velocidad de pronunciacion
 eng.setProperty("rate",180)
 #nivel de volumen de la voz
@@ -28,9 +26,17 @@ def ingresoAudio():
         audio = recognizer.listen(source)
         palabra=recognizer.recognize_google(audio, language="es_ES")    
     return palabra
-    
+
 while palabra!= "terminar":
     palabra=ingresoAudio()
+    if "iniciar" in palabra:
+        print("iniciar")
+    if palabra == "":
+        print(".")
+    '''
+    if "capturar" in palabra:
+        capturarPantalla()
+    '''
     print(palabra)
 
 
