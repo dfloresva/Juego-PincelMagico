@@ -1,21 +1,12 @@
 import cv2
 import numpy as np
 
-'''
-def capPantalla(frame,imAux):
-    cv2.imwrite('captura'+str(cont)+'0.png',frame)
-    cv2.imwrite('captura'+str(cont)+'1.png',imAux)
-'''
-def PizarraVirtual():
-	#captura imagen de la camara web
+#funcion principal: carga de pizarra virtual
+def PizarraVirtual():	
 	try:
-		cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-		cont=0
+		cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)	#captura imagen de la camara web
+		cont=0	#captura imagen de la camara web
 		capTomada=False
-		'''
-		celesteBajo = np.array([75, 185, 88], np.uint8)
-		celesteAlto = np.array([112, 255, 255], np.uint8)
-		'''
 		AzulBajo = np.array([75, 115, 88], np.uint8)
 		AzulAlto = np.array([112,255, 255], np.uint8)
 
