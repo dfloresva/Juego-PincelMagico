@@ -38,6 +38,7 @@ def principal():
         if "iniciar" in palabra:
             print("iniciar")
             ic.PizarraVirtual()
+            break
         '''
         if "capturar" in palabra:
             capturarPantalla()
