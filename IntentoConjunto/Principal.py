@@ -1,21 +1,6 @@
 import cv2
 import numpy as np
 
-import speech_recognition as sr
-recognizer=sr.Recognizer()
-microphone=sr.Microphone(device_index = 0)
-def ingresoAudio():    
-    try:		
-        print("Reconociendo...")
-        with microphone as source:
-            audio = recognizer.listen(source)
-            palabra=recognizer.recognize_google(audio, language="es_ES")    
-        return palabra
-    except: 
-        return "No entiendo"
-
-
-cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 '''
 def capPantalla(frame,imAux):
     cv2.imwrite('captura'+str(cont)+'0.png',frame)
@@ -24,7 +9,7 @@ def capPantalla(frame,imAux):
 def PizarraVirtual():
 	#captura imagen de la camara web
 	try:
-		#cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+		cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 		cont=0
 		capTomada=False
 		'''
@@ -174,7 +159,7 @@ def PizarraVirtual():
     									pass
 							else:
 								capTomada=False
-							#capTomada=True
+							#capTomada=True 
 						except:
 
 							print("falla catastrofica")
@@ -207,4 +192,4 @@ def PizarraVirtual():
 		return "lol"
 	cap.release()
 	cv2.destroyAllWindows()
-PizarraVirtual()
+#PizarraVirtual()
